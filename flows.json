@@ -1,0 +1,1309 @@
+[
+    {
+        "id": "d43a7424e8adb1a4",
+        "type": "tab",
+        "label": "Práctica 10 - Dashboard Final",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "fdc8bd830e6c3fcd",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0517d83e1fc3fbbe",
+        "type": "tab",
+        "label": "PLC_MOTOR",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2210c89730735d45",
+        "type": "modbus-client",
+        "name": "OpenPLC",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "1502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "7769bf69cd48f55a",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "52d2de24dcad0454",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#fcfcfd",
+            "primary": "#0d74ce",
+            "bgPage": "#f9f9fb",
+            "groupBg": "#ffffff",
+            "groupOutline": "#d9d9e0"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "943636765cb49cae",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "7769bf69cd48f55a",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "52d2de24dcad0454",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "tabs": [],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "057763ee688be96d",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "943636765cb49cae",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default",
+        "tab": ""
+    },
+    {
+        "id": "ui_theme",
+        "type": "ui-theme",
+        "name": "Tema industrial",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#1565c0",
+            "bgPage": "#eef2f6",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cbd5e1"
+        },
+        "sizes": {
+            "density": "comfortable",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "widgetGap": "12px",
+            "groupBorderRadius": "8px"
+        }
+    },
+    {
+        "id": "ui_page",
+        "type": "ui-page",
+        "name": "Control del motor",
+        "ui": "7769bf69cd48f55a",
+        "path": "/motor",
+        "icon": "dashboard",
+        "layout": "grid",
+        "theme": "ui_theme",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": false
+    },
+    {
+        "id": "ui_group_control",
+        "type": "ui-group",
+        "name": "Mandos del motor",
+        "page": "ui_page",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "ui_group_status",
+        "type": "ui-group",
+        "name": "Monitoreo del PLC",
+        "page": "ui_page",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "modbus_client",
+        "type": "modbus-client",
+        "name": "OpenPLC Runtime - editar puerto",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": false,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "1502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": false,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "fa7046c5e53a077d",
+        "type": "modbus-client",
+        "name": "PLC_OpenPLC",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": 502,
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "theme1",
+        "type": "ui-theme",
+        "name": "Default",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "page1",
+        "type": "ui-page",
+        "name": "Practica 10",
+        "ui": "7769bf69cd48f55a",
+        "path": "/practica10-v2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "theme1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "grp1",
+        "type": "ui-group",
+        "name": "Control de Motor",
+        "page": "page1",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "12286aa7a94f8317",
+        "type": "ui-theme",
+        "name": "Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0055ff",
+            "bg": "#e6e6e6"
+        }
+    },
+    {
+        "id": "a8602ec17fa6b43d",
+        "type": "ui-page",
+        "name": "Página 1",
+        "ui": "7769bf69cd48f55a",
+        "path": "/practica10",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "12286aa7a94f8317",
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "e2a2ee250fd3dc4b",
+        "type": "ui-group",
+        "name": "Control de Motor",
+        "page": "a8602ec17fa6b43d",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "3bb4a445af48edfb",
+        "type": "ui_tab",
+        "name": "PROCESOS",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "51d34502550c6454",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "8b25a57aff73aae0",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "3bb4a445af48edfb",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "edb6def30133d942",
+        "type": "modbus-client",
+        "name": "Mi_conexion",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": 502,
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "c9bdcdd9de578829",
+        "type": "mqtt-broker",
+        "name": "SERVER_HIVEMQ",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a1b2c3d4e5f60001",
+        "type": "ui_tab",
+        "name": "Control Motor",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a1b2c3d4e5f60002",
+        "type": "ui_group",
+        "name": "Mando",
+        "tab": "a1b2c3d4e5f60001",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e74210f5ea86252b",
+        "type": "ui-button",
+        "z": "d43a7424e8adb1a4",
+        "group": "e2a2ee250fd3dc4b",
+        "name": "Boton Marcha",
+        "label": "MARCHA",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "color": "#ffffff",
+        "icon": "play_arrow",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "58712712a5767219"
+            ]
+        ]
+    },
+    {
+        "id": "58712712a5767219",
+        "type": "trigger",
+        "z": "d43a7424e8adb1a4",
+        "name": "Pulso 500 ms",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "500",
+        "extend": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "aea2ea8c5396962b"
+            ]
+        ]
+    },
+    {
+        "id": "aea2ea8c5396962b",
+        "type": "modbus-write",
+        "z": "d43a7424e8adb1a4",
+        "name": "Marcha (Coil 800)",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "800",
+        "quantity": "1",
+        "server": "fa7046c5e53a077d",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 600,
+        "y": 100,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b9b065fbd243708f",
+        "type": "ui-button",
+        "z": "d43a7424e8adb1a4",
+        "group": "e2a2ee250fd3dc4b",
+        "name": "Boton Parada",
+        "label": "PARADA",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "color": "#ffffff",
+        "icon": "stop",
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "22b9264fe0e86001"
+            ]
+        ]
+    },
+    {
+        "id": "22b9264fe0e86001",
+        "type": "trigger",
+        "z": "d43a7424e8adb1a4",
+        "name": "Pulso 500 ms",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "500",
+        "extend": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 360,
+        "y": 180,
+        "wires": [
+            [
+                "6a964593e261ee52"
+            ]
+        ]
+    },
+    {
+        "id": "6a964593e261ee52",
+        "type": "modbus-write",
+        "z": "d43a7424e8adb1a4",
+        "name": "Parada (Coil 801)",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "801",
+        "quantity": "1",
+        "server": "fa7046c5e53a077d",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 600,
+        "y": 180,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fbb43d1c7263b10a",
+        "type": "ui-switch",
+        "z": "d43a7424e8adb1a4",
+        "name": "Switch Paro",
+        "label": "PARO DE EMERGENCIA",
+        "group": "e2a2ee250fd3dc4b",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "officon": "",
+        "offcolor": "",
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "decfb3360a039b96"
+            ]
+        ]
+    },
+    {
+        "id": "decfb3360a039b96",
+        "type": "modbus-write",
+        "z": "d43a7424e8adb1a4",
+        "name": "Paro Emerg. (Coil 802)",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "802",
+        "quantity": "1",
+        "server": "fa7046c5e53a077d",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 600,
+        "y": 260,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "68fc7714c41f60ec",
+        "type": "modbus-read",
+        "z": "d43a7424e8adb1a4",
+        "name": "Leer Motor (Coil 0)",
+        "topic": "",
+        "showStatusActivities": true,
+        "logIOActivities": false,
+        "showErrors": true,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "11",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": true,
+        "enableDeformedMessages": false,
+        "startDelayTime": "2",
+        "server": "fa7046c5e53a077d",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 150,
+        "y": 340,
+        "wires": [
+            [
+                "0dab33256ec436d8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0dab33256ec436d8",
+        "type": "function",
+        "z": "d43a7424e8adb1a4",
+        "name": "Formatear estado",
+        "func": "if (!Array.isArray(msg.payload)) {\n    return null;\n}\nconst c = msg.payload;\nmsg.payload = {\n  Motor: c[0],\n  Marcha: c[8],\n  Parada: c[9],\n  Paro_Emergencia: c[10]\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "0",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 340,
+        "wires": [
+            [
+                "0e6817690794624c",
+                "0c71351e9292eb26",
+                "32910d1b8518e53c"
+            ]
+        ]
+    },
+    {
+        "id": "0e6817690794624c",
+        "type": "ui-text",
+        "z": "d43a7424e8adb1a4",
+        "group": "e2a2ee250fd3dc4b",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "name": "Estado Motor UI",
+        "label": "MOTOR:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "className": "",
+        "x": 580,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "0c71351e9292eb26",
+        "type": "debug",
+        "z": "d43a7424e8adb1a4",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "32910d1b8518e53c",
+        "type": "function",
+        "z": "d43a7424e8adb1a4",
+        "name": "function 1",
+        "func": "msg.payload = !!msg.payload.Motor;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 400,
+        "wires": [
+            [
+                "5fee8fbf9bac3dd9"
+            ]
+        ]
+    },
+    {
+        "id": "5fee8fbf9bac3dd9",
+        "type": "ui_led",
+        "z": "d43a7424e8adb1a4",
+        "order": 0,
+        "group": "8b25a57aff73aae0",
+        "width": "1",
+        "height": "1",
+        "label": "",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "colorForValue": [
+            {
+                "color": "#37ff00",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#e91c1c",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 410,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "b7d6387ce5c2c9ae",
+        "type": "modbus-read",
+        "z": "0517d83e1fc3fbbe",
+        "name": "Conección_motor",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": true,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "11",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": true,
+        "enableDeformedMessages": false,
+        "startDelayTime": "2",
+        "server": "edb6def30133d942",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "ab9c6433b4e2d5f8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ab9c6433b4e2d5f8",
+        "type": "function",
+        "z": "0517d83e1fc3fbbe",
+        "name": "function 4",
+        "func": "if (!Array.isArray(msg.payload)) {\n    return null;\n}\nconst c = msg.payload;\nmsg.payload = {\n  Motor: c[0],\n  Marcha: c[8],\n  Parada: c[9],\n  Paro_Emergencia: c[10]\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "d119188d5bd12095",
+                "704afb338a93deaf",
+                "fd29a8516089acf2"
+            ]
+        ]
+    },
+    {
+        "id": "f918ad36e0479623",
+        "type": "modbus-flex-write",
+        "z": "0517d83e1fc3fbbe",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "fa7046c5e53a077d",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 790,
+        "y": 300,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "0d8ca979f9cfed2d",
+        "type": "ui_button",
+        "z": "0517d83e1fc3fbbe",
+        "name": "",
+        "group": "a1b2c3d4e5f60002",
+        "order": 2,
+        "width": "6",
+        "height": "1",
+        "passthru": false,
+        "label": "ENCENDER",
+        "tooltip": "Pulsar para iniciar motor",
+        "color": "red",
+        "bgcolor": "#10b981",
+        "className": "btn-minimal",
+        "icon": "",
+        "payload": "go",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 240,
+        "y": 240,
+        "wires": [
+            [
+                "bbf3862b63e23745"
+            ]
+        ]
+    },
+    {
+        "id": "034363b858fd7381",
+        "type": "ui_switch",
+        "z": "0517d83e1fc3fbbe",
+        "name": "",
+        "label": "PARADA",
+        "tooltip": "Interruptor de Parada",
+        "group": "a1b2c3d4e5f60002",
+        "order": 3,
+        "width": "6",
+        "height": "1",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 220,
+        "y": 300,
+        "wires": [
+            [
+                "b3755487eff5dca8"
+            ]
+        ]
+    },
+    {
+        "id": "20075860189d67b1",
+        "type": "ui_switch",
+        "z": "0517d83e1fc3fbbe",
+        "name": "",
+        "label": "PARO DE EMERGENCIA",
+        "tooltip": "Interruptor de emergencia",
+        "group": "a1b2c3d4e5f60002",
+        "order": 4,
+        "width": "6",
+        "height": "1",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "switch-emergencia",
+        "x": 170,
+        "y": 360,
+        "wires": [
+            [
+                "5ae3cb9834133a33"
+            ]
+        ]
+    },
+    {
+        "id": "bbf3862b63e23745",
+        "type": "function",
+        "z": "0517d83e1fc3fbbe",
+        "name": "Pulso Marcha (coil 8)",
+        "func": "node.send({ payload: { value: true, fc: 5, unitid: 1, address: 8, quantity: 1 } });\nsetTimeout(function () {\n  node.send({ payload: { value: false, fc: 5, unitid: 1, address: 8, quantity: 1 } });\n}, 300);\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "f918ad36e0479623"
+            ]
+        ]
+    },
+    {
+        "id": "b3755487eff5dca8",
+        "type": "function",
+        "z": "0517d83e1fc3fbbe",
+        "name": "Escribe Parada (coil 9)",
+        "func": "msg.payload = { value: !!msg.payload, fc: 5, unitid: 1, address: 9, quantity: 1 };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 300,
+        "wires": [
+            [
+                "f918ad36e0479623"
+            ]
+        ]
+    },
+    {
+        "id": "5ae3cb9834133a33",
+        "type": "function",
+        "z": "0517d83e1fc3fbbe",
+        "name": "Escribe Emergencia (coil 10)",
+        "func": "msg.payload = { value: !!msg.payload, fc: 5, unitid: 1, address: 10, quantity: 1 };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "f918ad36e0479623"
+            ]
+        ]
+    },
+    {
+        "id": "d119188d5bd12095",
+        "type": "function",
+        "z": "0517d83e1fc3fbbe",
+        "name": "Motor a LED",
+        "func": "msg.payload = !!msg.payload.Motor;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 100,
+        "wires": [
+            [
+                "c41edaebe4026a2d"
+            ]
+        ]
+    },
+    {
+        "id": "c41edaebe4026a2d",
+        "type": "ui_led",
+        "z": "0517d83e1fc3fbbe",
+        "order": 1,
+        "group": "a1b2c3d4e5f60002",
+        "width": "6",
+        "height": "2",
+        "label": "MOTOR",
+        "labelPlacement": "left",
+        "labelAlignment": "center",
+        "colorForValue": [
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 710,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "9ddfe544018b91f7",
+        "type": "ui_template",
+        "z": "0517d83e1fc3fbbe",
+        "group": "a1b2c3d4e5f60002",
+        "name": "Estilo Minimalista",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    /* 1. Fondo general de la pantalla */\n    body,\n    md-content,\n    .nr-dashboard-theme {\n        background-color: #0b0f19 !important;\n        font-family: 'Segoe UI', Roboto, system-ui, sans-serif !important;\n    }\n\n    /* 2. Eliminación del recuadro blanco + Borde Fosforescente (Cyan Neón) */\n    ui-card-panel,\n    .nr-dashboard-cardpanel,\n    md-card,\n    .md-card,\n    .nr-dashboard-card {\n        background-color: #131b2e !important;\n        background: #131b2e !important;\n        border: 2px solid #00f3ff !important;\n        /* Borde cian fosforescente */\n        border-radius: 14px !important;\n        box-shadow: 0 0 15px rgba(0, 243, 255, 0.4), 0 10px 25px -5px rgba(0, 0, 0, 0.7) !important;\n        /* Resplandor neón */\n        padding: 18px 20px !important;\n    }\n\n    /* 3. Título del Panel (MANDO) */\n    .nr-dashboard-cardtitle,\n    md-card-title {\n        color: #00f3ff !important;\n        /* Texto fosforescente */\n        font-size: 14px !important;\n        font-weight: 800 !important;\n        letter-spacing: 1.5px !important;\n        text-transform: uppercase !important;\n        border-bottom: 1px solid rgba(0, 243, 255, 0.25) !important;\n        padding-bottom: 10px !important;\n        margin-bottom: 16px !important;\n        text-shadow: 0 0 8px rgba(0, 243, 255, 0.6) !important;\n    }\n\n    /* 4. Textos de Controles (MOTOR, PARADA, PARO DE EMERGENCIA) */\n    md-card-content,\n    label,\n    p,\n    span,\n    div,\n    .ui-led-label {\n        color: #f8fafc !important;\n        font-size: 13.5px !important;\n        font-weight: 600 !important;\n        letter-spacing: 0.3px !important;\n    }\n\n    /* 5. Transparencia de contenedores internos */\n    .ui-led-container,\n    .nr-dashboard-template,\n    div[ng-eval] {\n        background-color: transparent !important;\n    }\n\n    /* 6. Botón ENCENDER estilo Neón Verde */\n    .btn-minimal button,\n    md-button.md-raised {\n        background: linear-gradient(135deg, #00ff87 0%, #60efff 100%) !important;\n        border: none !important;\n        border-radius: 8px !important;\n        font-weight: 800 !important;\n        font-size: 14px !important;\n        letter-spacing: 1px !important;\n        color: #041019 !important;\n        min-height: 44px !important;\n        box-shadow: 0 0 12px rgba(0, 255, 135, 0.6) !important;\n        transition: all 0.2s ease-in-out !important;\n    }\n\n    .btn-minimal button:hover,\n    md-button.md-raised:hover {\n        box-shadow: 0 0 20px rgba(0, 255, 135, 0.9) !important;\n        transform: translateY(-1px) !important;\n    }\n\n    .btn-minimal button:active,\n    md-button.md-raised:active {\n        transform: translateY(1px) !important;\n    }\n\n    /* 7. Interruptores (Switches) fosforescentes */\n    md-switch .md-thumb {\n        background-color: #64748b !important;\n    }\n\n    md-switch.md-checked .md-thumb {\n        background-color: #00f3ff !important;\n        box-shadow: 0 0 10px #00f3ff !important;\n    }\n\n    md-switch.md-checked .md-bar {\n        background-color: rgba(0, 243, 255, 0.4) !important;\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "global",
+        "className": "",
+        "x": 210,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2901bf1ff0fea67",
+        "type": "mqtt in",
+        "z": "0517d83e1fc3fbbe",
+        "name": "",
+        "topic": "clase-undac-jhoshua-7f3k/motor/cmd",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "c9bdcdd9de578829",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 500,
+        "wires": [
+            [
+                "9c315a7ba7fba86e"
+            ]
+        ]
+    },
+    {
+        "id": "9c315a7ba7fba86e",
+        "type": "function",
+        "z": "0517d83e1fc3fbbe",
+        "name": "Traductor Modbus",
+        "func": "const d = msg.payload;\nif (!d || !d.cmd) return null;\n\nif (d.cmd === 'marcha') {\n    node.send({ payload: { value: true, fc: 5, unitid: 1, address: 8, quantity: 1 } });\n    setTimeout(function () {\n        node.send({ payload: { value: false, fc: 5, unitid: 1, address: 8, quantity: 1 } });\n    }, 300);\n    return null;\n} else if (d.cmd === 'parada') {\n    return { payload: { value: !!d.val, fc: 5, unitid: 1, address: 9, quantity: 1 } };\n} else if (d.cmd === 'emergencia') {\n    return { payload: { value: !!d.val, fc: 5, unitid: 1, address: 10, quantity: 1 } };\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 500,
+        "wires": [
+            [
+                "f918ad36e0479623"
+            ]
+        ]
+    },
+    {
+        "id": "704afb338a93deaf",
+        "type": "mqtt out",
+        "z": "0517d83e1fc3fbbe",
+        "name": "",
+        "topic": "clase-undac-jhoshua-7f3k/motor/estado",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c9bdcdd9de578829",
+        "x": 740,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "fd29a8516089acf2",
+        "type": "debug",
+        "z": "0517d83e1fc3fbbe",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "0499028b16072831",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-modbus": "5.62.1",
+            "@flowfuse/node-red-dashboard": "1.34.1",
+            "node-red-dashboard": "3.6.6",
+            "node-red-contrib-ui-led": "0.4.11"
+        }
+    }
+]
