@@ -4,11 +4,14 @@
   "description": "Dashboard Node-RED para Control de Motor",
   "main": "settings.js",
   "scripts": {
-    "start": "node-red --settings settings.js"
+    "start": "node-red --settings settings.js flows.json"
   },
   "dependencies": {
-    "node-red": "^3.1.0",
+    "node-red": "^4.0.2",
     "node-red-dashboard": "^3.6.5",
     "node-red-contrib-modbus": "^5.62.1"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
