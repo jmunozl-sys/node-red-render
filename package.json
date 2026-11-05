@@ -1,0 +1,14 @@
+{
+  "name": "node-red-plc-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard Node-RED para Control de Motor",
+  "main": "settings.js",
+  "scripts": {
+    "start": "node-red --settings settings.js flows.json"
+  },
+  "dependencies": {
+    "node-red": "^3.1.0",
+    "@flowfuse/node-red-dashboard": "^1.34.1",
+    "node-red-contrib-modbus": "^5.62.1"
+  }
+}
