@@ -9,6 +9,7 @@
   "dependencies": {
     "node-red": "^4.0.2",
     "node-red-dashboard": "^3.6.5",
+    "@flowfuse/node-red-dashboard": "^1.18.0",
     "node-red-contrib-modbus": "^5.62.1"
   },
   "engines": {
